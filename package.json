@@ -1,0 +1,19 @@
+{
+  "name": "blogdemo",
+  "version": "1.0.0",
+  "description": "Use Nodejs, reactjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viettienbk/blogdemo.git"
+  },
+  "author": "TienLV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viettienbk/blogdemo/issues"
+  },
+  "homepage": "https://github.com/viettienbk/blogdemo#readme"
+}
