@@ -1,3 +1,10 @@
+var { Router,
+      Route,
+      IndexRoute,
+      IndexLink,
+      hashHistory,
+      Link } = ReactRouter;
+
 class Post extends React.Component{
   render(){
     return(
@@ -26,28 +33,36 @@ class Post extends React.Component{
   }
 }
 
-class ListPost extends React.Component{
-  render(){
-    return(
-      <div className='listPost'>
-        <Post />
-        <Post />
-      </div>
-    );
-  };
-}
-
 class WidgetMenu extends React.Component{
   render(){
     return(
       <div className='widget-menu'>
         <ul>
-          <li>Popular Post</li>
-          <li>Video</li>
-          <li>Category</li>
+          <li><IndexLink to='/' activeClassName="active">Popular Post</IndexLink></li>
+          <li><Link to='/widget-menu/video' activeClassName="active">Video</Link></li>
+          <li><Link to='/widget-menu/category' activeClassName="active">Category</Link></li>
         </ul>
-        <ListPopularPost/>
+        <div className='widget-content'>
+          {this.props.children}
+        </div>
       </div>
+    );
+  }
+}
+
+class Video extends React.Component{
+  render(){
+    return(
+      <h1>Video</h1>
+    );
+  }
+}
+
+
+class Category extends React.Component{
+  render(){
+    return(
+      <h1>Category</h1>
     );
   }
 }
@@ -85,42 +100,145 @@ class ListPopularPost extends React.Component{
   }
 }
 
+//  Header
+class Header extends React.Component{
+  render(){
+    return(
+      <div className = 'header' >
+        <div className = 'socia' >
+          <ul >
+            <a href = '#' > < i className = "fa fa-facebook-official" > < /i></a >
+            <a href = '#' > < i className = "fa fa-google-plus-official" > < /i></a >
+          </ul>
+        </div >
+      </div>
+    );
+  }
+}
+
+class ListPost extends React.Component{
+  render(){
+    return(
+      <div className='listPost'>
+        <Post />
+        <Post />
+        <Post />
+      </div>
+    );
+  };
+}
+
+class Menu1 extends React.Component{
+  render(){
+    return(
+      <h1>Menu 1</h1>
+    );
+  }
+}
+
+class Menu2 extends React.Component{
+  render(){
+    return(
+      <h1>Menu 2</h1>
+    );
+  }
+}
+
+class Menu3 extends React.Component{
+  render(){
+    return(
+      <h1>Menu 3</h1>
+    );
+  }
+}
+
+class SubMenu1 extends React.Component{
+  render(){
+    return(
+      <h1>Sub Menu 1</h1>
+    );
+  }
+}
+
+class SubMenu2 extends React.Component{
+  render(){
+    return(
+      <h1>Sub Menu 2</h1>
+    );
+  }
+}
+
+class SubMenu3 extends React.Component{
+  render(){
+    return(
+      <h1>Sub Menu 3</h1>
+    );
+  }
+}
+
+//  Main menu
+class MainMenu extends React.Component{
+  render(){
+    return(
+      <div className = 'menu'>
+        <ul className = 'menubar'>
+          <li><IndexLink to='/' activeClassName="active"> Home </IndexLink></li>
+          <li><Link to='/menu1' activeClassName="active"> Menu 1 </Link></li>
+          <li><Link to='/menu2' activeClassName="active"> Menu 2 </Link></li>
+          <li><Link to='/menu3' activeClassName="active"> Menu 3 </Link>
+            <ul>
+              <li><Link to='/menu3/submenu1'> Sub Menu 1 </Link></li>
+              <li><Link to='/menu3/submenu2'> Sub Menu 2 </Link></li>
+              <li><Link to='/menu3/submenu3'> Sub Menu 3 </Link></li>
+            </ul>
+          </li>
+        </ul>
+        <div className ='search'>
+        </div>
+        <div className='listPost'>
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
+
+//  home
 ReactDOM.render(
-  <div className = 'container' >
-    <div className = 'header' >
-    <div className = 'socia' >
-    <ul >
-    <a href = '#' > < i className = "fa fa-facebook-official" > < /i></a >
-    <a href = '#' > < i className = "fa fa-google-plus-official" > < /i></a >
-    </ul> </div >
+  <div className = 'container'>
+    <Header/>
+    <div id='main-menu'>
     </div>
-    <div className = 'menu' >
-    <ul className = 'menubar' >
-    <li>
-    <a href = '#' > Home </a> </li>
-    <li>
-    <a href = '#' > Menu 1 </a> </li>
-    <li>
-    <a href = '#' > Menu 2 </a> </li>
-    <li>
-    <a href = '#' > Menu 3 </a>
-    <ul>
-    <li>
-    <a href = '#' > Sub Menu 1 </a>
-    </li>
-    <li>
-    <a href = '#' > Sub Menu 2 </a>
-    </li>
-    <li>
-    <a href = '#' > Sub Menu 3 </a>
-    </li> </ul>
-    </li>
-    </ul>
-    <div className = 'search' >
-    </div> </div>
-    <div>
-      <ListPost/>
-      <WidgetMenu/>
+    <div id='widget-menu'>
     </div>
-    </div>
-    ,document.getElementById('root'));
+  </div>
+  ,document.getElementById('root'));
+
+// main menu
+ReactDOM.render(
+  <ReactRouter.Router history={ReactRouter.hashHistory}>
+    <ReactRouter.Route path="/" component={MainMenu}>
+      <IndexRoute component={ListPost}/>
+      <Route path='/menu1' component={Menu1}/>
+      <Route path='/menu2' component={Menu2}/>
+      <Route path='/menu3' component={Menu3}>
+        <Route path='/submenu1' component={SubMenu1}/>
+        <Route path='/submenu2' component={SubMenu2}/>
+        <Route path='/submenu3' component={SubMenu3}/>
+      </Route>
+    </ReactRouter.Route>
+  </ReactRouter.Router>,
+  document.getElementById('main-menu')
+);
+
+// widget menu
+ReactDOM.render(
+  <ReactRouter.Router history={ReactRouter.hashHistory}>
+    <ReactRouter.Route path="/" component={WidgetMenu}>
+      <IndexRoute component={ListPopularPost}/>
+      <Route path='/widget-menu/video' component={Video}/>
+      <Route path='/widget-menu/category' component={Category}/>
+    </ReactRouter.Route>
+  </ReactRouter.Router>,
+  document.getElementById('widget-menu')
+);
