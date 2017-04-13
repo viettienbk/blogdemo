@@ -1,0 +1,291 @@
+* {
+    margin: 0px auto;
+    background-color: #ddd;
+    padding: 0px 0px 0px 0px;
+}
+
+.container {
+    width: 1200px;
+}
+
+
+/* Header */
+
+.header {
+    margin: 0px auto;
+    background-color: #fff;
+    height: 150px;
+}
+
+.header .socia {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.header .socia ul {
+    list-style-type: none;
+    float: right;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+}
+
+.header .socia ul a {
+    width: 30px;
+    font-size: 18px;
+    padding: 4px;
+    display: block;
+    float: right;
+    color: #000;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.header .socia ul a i {
+    background-color: #fff;
+}
+
+
+/* menu */
+
+.menu {
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    margin: 0px;
+    background-color: #3d3d3d;
+    background: -webkit-linear-gradient(top, #3d3d3d, #212121);
+}
+
+.menu .menubar {
+    list-style-type: none;
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.menu .menubar>li {
+    float: left;
+}
+
+.menu .menubar li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 1px 0px 0px;
+}
+
+.menu .menubar li a {
+    height: 20px;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    padding: 15px 30px;
+    color: #fbfbfb;
+    background-color: transparent;
+    background: -webkit-linear-gradient(top, #3d3d3d, #212121);
+}
+
+.menu .menubar li ul {
+    background: #383838;
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    transition: all .25s ease-out;
+}
+
+.menu .menubar li ul li a {
+    height: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #fbfbfb;
+    background-color: transparent;
+    background: -webkit-linear-gradient(top, #3d3d3d, #212121);
+}
+
+.menu .menubar li:hover ul {
+    background: #383838;
+    position: absolute;
+    display: block;
+    visibility: visible;
+}
+
+
+/*  List Post */
+.listPost{
+  width: 800px;
+  min-height: 400px;
+  float: left;
+  background-color: #fff;
+}
+
+/* Post */
+.post{
+  width: 740px;
+  height: 230px;
+  border: 1px solid #ccc;
+  margin: 15px 30px 15px 30px;
+  background-color: #fff;
+}
+.post img{
+  width: 200px;
+  height: 200px;
+  margin: 15px 25px 0px 15px;
+  float: left;
+  position: relative;
+}
+
+.post .post-content{
+  margin: 15px 0px 0px 0px;
+  background-color: #fff;
+}
+
+.post .post-content h2{
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #fff;
+  padding-left: 250px;
+}
+
+.post .post-content h2 span{
+  background-color: #fff;
+}
+
+
+.post .post-content .post-info{
+  background-color: #fff;
+  margin: 15px 0px 0px 0px;
+  font-size: 13px;
+  color: #888;
+  text-transform: uppercase;
+  padding-left: 250px;
+}
+
+.post .post-content .post-info .post-time{
+  background-color: #fff;
+}
+
+.post .post-content .post-info .post-author{
+  margin-left: 20px;
+  background-color: #fff;
+}
+
+.post .post-content .post-info .post-author .fa{
+  font-size: 4px;
+  background-color: #fff;
+  padding-right: 4px;
+}
+
+.post .post-content .post-body{
+  background-color: #fff;
+  margin-top: 20px;
+  font-size: 15px;
+  padding-left: 250px;
+}
+
+.post .post-content .post-body span{
+  background-color: #fff;
+  width: 100%;
+  display: block;
+  line-height: 22px;
+  font-size: 17px;
+}
+
+.post .post-content .post-body a{
+  color: #000;
+  border: 1px solid #000;
+  padding: 4px;
+  text-transform: uppercase;
+  margin: 15px 0px 0px 0px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* widget menu*/
+.widget-menu{
+  width: 400px;
+  padding-top: 15px;
+  min-height: 400px;
+  background-color: #fff;
+  float: left;
+}
+
+.widget-menu ul{
+  width: 360px;
+  list-style: none;
+  margin: 0px auto;
+  padding: 0px;
+  background-color: #fff;
+  height: 38px;
+  margin-bottom: 20px;
+}
+
+.widget-menu ul li{
+  background: #333;
+  bottom: -2px;
+  color: #FFF;
+  cursor: pointer;
+  float: left;
+  height: 38px;
+  line-height: 38px;
+  margin: -2px 0px 0 0px;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 33.3%;
+  z-index: 2;
+}
+
+/* popular post */
+.popular-post{
+  width: 380px;
+  height: 96px;
+  background: #fff;
+  margin-left: 20px;
+  background-color: #fff;
+}
+
+.popular-post img{
+  width: 81px;
+  height: 81px;
+  position: relative;
+  background-color: #fff;
+  float: left;
+  margin: 0px 0px 0px 0px;
+}
+
+.list-popular-post{
+  background-color: #fff;
+}
+
+.popular-post .popular-title{
+  background-color: #fff;
+  display: block;
+  padding-left: 100px;
+  margin: 0px 0px 0px 0px;
+}
+
+.popular-post .popular-title a{
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  display: block;
+}
+
+.popular-post .popular-title a b{
+  background-color: #fff;
+}
+.popular-container{
+  background-color: #fff;
+  margin-top: 15px;
+}
+.popular-container hr{
+  background-color: #ccc;
+  margin: 0px 20px 0px 20px;
+}

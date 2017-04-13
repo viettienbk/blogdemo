@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/viettienbk/blogdemo/issues"
   },
-  "homepage": "https://github.com/viettienbk/blogdemo#readme"
+  "homepage": "https://github.com/viettienbk/blogdemo#readme",
+  "dependencies": {
+    "webpack": "^2.3.3"
+  }
 }
