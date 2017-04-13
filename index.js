@@ -8,5 +8,8 @@ app.set('views', 'views');
 app.listen(3000);
 
 app.get('/', function(req, res) {
-    res.render('home');
+    res.render('admin/dashboard');
+});
+app.get('/profile', function(req, res) {
+	res.render('admin/user');
 });
