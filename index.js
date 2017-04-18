@@ -19,7 +19,11 @@ require('./app/api/category')(app);
 require('./app/api/post')(app);
 
 app.get('/', function(req, res) {
-    res.render('home');
+    res.render('admin/dashboard');
+});
+app.get('/profile', function(req, res) {
+	res.render('admin/user');
 });
 
 app.listen(3000);
+
